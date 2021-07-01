@@ -24,14 +24,14 @@ local_env = open(os.path.join(BASE_DIR, '.env'))
 # 즉 최상위 폴더에 생성한 .env 파일 경로
 
 while True:
-    line= local_env.readline()
+    line = local_env.readline()
     if not line:
         break
-    line = line.replace('/n','')    # 개행을 공백으로 치환
+    line = line.replace('/n', '')    # 개행을 공백으로 치환
     start = line.find('=')  # =의 위치를 파악하고 그 인덱스를 넘겨줌
     key = line[:start]   # 왼쪽을 키 오른쪽을 값으로
-    value =line[start+1:]
-    env_list[key]=value
+    value = line[start+1:]
+    env_list[key] = value
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/

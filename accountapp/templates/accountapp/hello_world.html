@@ -2,31 +2,18 @@
 
 {% block content %}
 
-    <style>
+   <div style="margin: 2rem; text-align: center">
+        <h1>METHOD</h1>
 
-        .testing{
-            background-color: yellow;
-            margin: 1rem;
-            height: 48px;
-            width: 48px;
-            display: inline-block;
-            border-radius: .5rem;
-        }
+       <form action="/accounts/hello_world/" method="post">
+           {% csrf_token %}
+            {# csrf token 해줘야 제출 버튼 눌렀을 때 post 전달됨됨          #}
+           <input type="submit" class="btn btn-dark rounded-pill px-4">
+            {#  rounded-pill 둥근알약 모양 px-4 는 내부 패딩         #}
+       </form>
+{# form 타이핑하고 tap 누르면 자동완성 #}
 
-    </style>
+        <h3>{{ text }}</h3>
 
-    <div style = "height : 20rem; background-color:aqua;
-     margin: 2rem; border-radius: 1rem; overflow: scroll">
-{#    overflow :hidden 은 그냥 짤리는 거 감춤#}
-{#    overflow : scroll 은 짤리는 거 스크롤바로 #}
-        <h1>TEST</h1>
-
-    <div class="testing" style ="height:48px; width :48px; ">px</div>
-    <div class="testing" style ="height:3rem; width :3rem; ">rem</div>
-    <div class="testing" style ="height:3em; width :3em; ">em</div>
-    <div class="testing" style ="height:30%; width :30%; ">%</div>
-
-
-    </div>
-
+   </div>
 {% endblock %}

@@ -8,3 +8,5 @@ class HelloWorld(models.Model):
 
 
     text = models.CharField(max_length=255, null=False)
+    # 문자열의 최대길이는 255, null값은 불가
+    # 아주 간단한 모델

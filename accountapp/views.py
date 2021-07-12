@@ -17,11 +17,15 @@ def hello_world(request):
         new_hello_world.save()
         # 데이터베이스에 새로운 행 (반영)
 
+        hello_world_list = HelloWorld.objects.all()
+
+
 
         return render(request, 'accountapp/hello_world.html',
-                      context={'new_hello_world': new_hello_world})
+                      context={'hello_world_list': hello_world_list})
         # 객체를 보내줌
 
     else:
+        hello_world_list = HelloWorld.objects.all()
         return render(request, 'accountapp/hello_world.html',
-                      context={'text': 'GET METHOD!'})
+                      context={'hello_world_list': hello_world_list})

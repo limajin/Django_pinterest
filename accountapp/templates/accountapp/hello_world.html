@@ -14,8 +14,9 @@
        </form>
 {# form 타이핑하고 tap 누르면 자동완성 #}
 
-        <h3>{{ new_hello_world.text }}</h3>
-{#         객체 안에 속성인 text 출력 #}
-{#         실제 데이터 베이스에 저장됨 #}
+        {% for hello_world in hello_world_list %}
+        <h3>{{ hello_world.text }}</h3>
+        {% endfor %}
+
    </div>
 {% endblock %}

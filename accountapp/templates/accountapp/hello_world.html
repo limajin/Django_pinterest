@@ -2,11 +2,12 @@
 
 {% block content %}
 
-   <div style="margin: 2rem; text-align: center">
+   <div style="margin: 2rem; text-align: center;">
         <h1>METHOD</h1>
 
        <form action="/accounts/hello_world/" method="post">
            {% csrf_token %}
+           <input type="text" name="input_text">
             {# csrf token 해줘야 제출 버튼 눌렀을 때 post 전달됨됨          #}
            <input type="submit" class="btn btn-dark rounded-pill px-4">
             {#  rounded-pill 둥근알약 모양 px-4 는 내부 패딩         #}

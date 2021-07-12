@@ -98,6 +98,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+# 데이터베이스 세팅
+# BASE_DIR / 최상위 폴더에 'db.sqlite3'라는 이름으로
 
 
 # Password validation

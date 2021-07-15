@@ -25,6 +25,11 @@
        {# span은 버튼 역할#}
         {% else %}
         <span>
+            <a href="{% url 'accountapp:detail' pk=user.pk %}">
+                MyPage
+            </a>
+        </span>
+        <span>
             <a href="{% url 'accountapp:logout' %}">
                 Logout
             </a>

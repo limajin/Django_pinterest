@@ -1,7 +1,7 @@
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path
 
-from accountapp.views import hello_world, AccountCreateView, AccountDetailView, AccountUpdateView
+from accountapp.views import hello_world, AccountCreateView, AccountDetailView, AccountUpdateView, AccountDeleteView
 
 app_name = 'accountapp'
 
@@ -19,4 +19,6 @@ urlpatterns = [
     # 키를 넘겨주는 과정
 
     path('updata/<int:pk>', AccountUpdateView.as_view(), name='update'),
+
+    path('delete/<int:pk>', AccountDeleteView.as_view(), name='delete'),
 ]

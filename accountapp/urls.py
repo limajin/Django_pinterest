@@ -18,7 +18,7 @@ urlpatterns = [
     path('detail/<int:pk>', AccountDetailView.as_view(), name='detail'),
     # 키를 넘겨주는 과정
 
-    path('updata/<int:pk>', AccountUpdateView.as_view(), name='update'),
+    path('update/<int:pk>', AccountUpdateView.as_view(), name='update'),
 
     path('delete/<int:pk>', AccountDeleteView.as_view(), name='delete'),
 ]

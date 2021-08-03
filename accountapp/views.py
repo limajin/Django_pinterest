@@ -12,6 +12,7 @@ from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 from accountapp.decorators import account_ownership_required
 from accountapp.forms import AccountCreationForm
 from accountapp.models import HelloWorld
+from articleapp.models import Article
 
 
 @login_required(login_url=reverse_lazy('accountapp:login'))

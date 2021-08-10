@@ -10,9 +10,6 @@ from commentapp.decorators import comment_ownership_required
 from commentapp.forms import CommentCreationForm
 from commentapp.models import Comment
 
-
-
-
 @method_decorator(login_required,'get')
 @method_decorator(login_required,'post')
 class CommentCreateView(CreateView):
@@ -27,6 +24,7 @@ class CommentCreateView(CreateView):
 
     def get_success_url(self):
         return reverse('articleapp:detail', kwargs={'pk': self.object.article.pk})
+
 
 @method_decorator(comment_ownership_required, 'post')
 @method_decorator(comment_ownership_required, 'get')

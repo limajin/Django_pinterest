@@ -64,9 +64,10 @@
     margin: 1rem;
 }
 
+
 /* 사용하고있는 기기의스크린 크기를 알아낸 후 크기를 좀 줄여줌*/
-@media screen and(max-width: 500px){
-    html{
+@media screen and (max-width: 500px) {
+    html {
         /* default font-size = 16px */
         font-size: 13px;
     }

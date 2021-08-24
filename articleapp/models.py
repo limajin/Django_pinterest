@@ -21,3 +21,5 @@ class Article(models.Model):
 
     created_at = models.DateField(auto_now_add=True, null=True)
     # 시간 정보 자동 입력되게
+
+    like = models.IntegerField(default=0)

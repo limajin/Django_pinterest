@@ -9,18 +9,21 @@ services:
     networks:
       - gis1_network
     volumes:
-      - /home/ubuntu/nginx.conf:/etc/nginx/nginx.conf
+      - /home/dkwls8782/nginx.conf:/etc/nginx/nginx.conf
       - gis1_static:/data/static/
       - gis1_media:/data/media/
 
   django:
-    image: gis1_django4
+    image: gis1_django:5
     networks:
       - gis1_network
     volumes:
       - gis1_static:/home/gis_1/staticfiles/
       - gis1_media:/home/gis_1/media/
-
+    secrets:
+      - DJANGO_SECRET_KEY
+      - MARIADB_USER
+      - MARIADB_PASSWORD
 
   mariadb:
     image: mariadb:10.5
@@ -28,11 +31,15 @@ services:
       - gis1_network
     volumes:
       - gis_mariadb:/var/lib/mysql
+    secrets:
+      - MARIADB_ROOT_PASSWORD
+      - MARIADB_USER
+      - MARIADB_PASSWORD
     environment:
-      MARIADB_ROOT_PASSWORD: password1234
-      MARIADB_DATABASE: django
-      MARIADB_USER: django
-      MARIADB_PASSWORD: password1234
+      MARIADB_DATABASE : django
+      MARIADB_USER_FILE : /run/secrets/MARIADB_USER
+      MARIADB_PASSWORD_FILE : /run/secrets/MARIADB_PASSWORD
+      MARIADB_ROOT_PASSWORD_FILE: /run/secrets/MARIADB_ROOT_PASSWORD
 
 
 networks:
@@ -42,3 +49,13 @@ volumes:
   gis1_static:
   gis1_media:
   gis_mariadb:
+
+secrets:
+  DJANGO_SECRET_KEY:
+    external: true
+  MARIADB_ROOT_PASSWORD:
+    external: true
+  MARIADB_USER:
+    external: true
+  MARIADB_PASSWORD:
+    external: true

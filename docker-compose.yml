@@ -30,7 +30,7 @@ services:
     networks:
       - gis1_network
     volumes:
-      - mariadb:/var/lib/mysql
+      - gis_mariadb:/var/lib/mysql
     secrets:
       - MARIADB_ROOT_PASSWORD
       - MARIADB_USER

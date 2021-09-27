@@ -9,7 +9,7 @@ services:
     networks:
       - gis1_network
     volumes:
-      - /home/dkwls8782/nginx.conf:/etc/nginx/nginx.conf
+      - /home/ubuntu/nginx.conf:/etc/nginx/nginx.conf
       - gis1_static:/data/static/
       - gis1_media:/data/media/
 
